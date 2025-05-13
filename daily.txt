@@ -1,0 +1,2 @@
+#brew services stop jenkins-lts
+#brew services start jenkins-lts
