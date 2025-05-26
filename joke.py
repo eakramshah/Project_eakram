@@ -22,7 +22,20 @@ if answer == "yes":
   print(joke)
   engine.say(joke)
   engine.runAndWait()
+  print("\nWant to hear one more? (yes/no)")
+  answer2 = input().strip().lower()
+  if answer2 == "yes":
+     print ("Hi\n"  + " Here is a joke for you.\n")
+     joke = random.choice(jokes)
+     print (joke)
+     engine.say(joke)
+     engine.runAndWait()
+
+  else:
+    print ("\nOk no problem ! Maybe Next time ")
+    engine.say("\n Ok no problem ! Maybe Next time ")
+    engine.runAndWait()
 else:
-  print ("\nOk no problem ! Maybe Next time ")
-  engine.say("\n Ok no problem ! Maybe Next time ")
-  engine.runAndWait()
+    print("\nOkay! Come back for more jokes anytime!")
+    engine.say("Okay! Come back for more jokes anytime!")
+    engine.runAndWait()
