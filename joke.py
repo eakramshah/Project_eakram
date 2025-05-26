@@ -31,7 +31,7 @@ if answer == "yes":
      engine.say(joke)
      engine.runAndWait()
 
-  else:
+  elif  answer2=="no":
     print ("\nOk no problem ! Maybe Next time ")
     engine.say("\n Ok no problem ! Maybe Next time ")
     engine.runAndWait()

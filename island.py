@@ -1,4 +1,10 @@
 # island 
+
+import pyttsx3
+
+engine = pyttsx3.init()
+engine.setProperty('rate', 150)  # Set speaking speed
+
 print ('''*******************************************************************************
           |                   |                  |                     |
  _________|________________.=""_;=.______________|_____________________|_______
@@ -20,7 +26,7 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 /______/______/______/______/______/______/______/______/______/______/[TomekK]
 *******************************************************************************''')
 
-choice1=input ('Welconme to treasure Island your mission is to find the tressur \Type left or right !').lower()
+choice1=input ('Welconme to treasure Island your mission is to find the tressur \Type left or right !\n').lower()
 if choice1=="left":
     print ('''                  _
              .''.' \    _  __
@@ -39,7 +45,10 @@ if choice1=="left":
                                          _/    'o'
                                       .-'
 ''')
-    choice2= input ("There is a Lake around !! Do you want to swim or wait swim or wait for a Boat").lower()
+    choice2= input ("There is a Lake around !! Do you want to swim or wait swim or wait for a Boat\n").lower()
+    engine.say("There is a Lake around !! Do you want to swim or wait swim or wait for a Boat")
+    engine.runAndWait()
+  
     if choice2=="wait":
        print ('''                  _  /)
                  mo / )
@@ -68,6 +77,8 @@ _________||_|_|_|_{| |}|||_|_||______________
                      |}/
                      |/
 ''')
+       engine.say("Boat took you to a temple !! there are 3 Colour Gates !! You need to choose the correct gate to enter")
+       engine.runAndWait()
        print ("Boat took you to a temple !! there are 3 Colour Gates !! You need to choose the correct gate to enter")
        print ('''
         / \                                                                                          / \
@@ -106,6 +117,8 @@ _________||_|_|_|_{| |}|||_|_||______________
   |___|___|___|_| "-----------------------------------"  "-----------------------------------" |___|___|___dv|''')
        
        choice3= input ("Chose Gate colour to enter !!  red/blue/green").lower()
+       engine.say("Chose Gate colour to enter !!  red/blue/green")
+       engine.runAndWait()
        if choice3 =="red":
            print ('''                                    ___---|
                                    /::::::|
@@ -151,6 +164,8 @@ _________||_|_|_|_{| |}|||_|_||______________
                                  ||||   ||||
                                         |''')
            print ("Wrong gate !! Game over")
+           engine.say("Wrong gate !! Game over")
+           engine.runAndWait()
        elif choice3=="blue":
            print('''*******************************************************************************
           |                   |                  |                     |
@@ -174,8 +189,13 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 *******************************************************************************''')
            
            print ("You Won the treasure !! ")
+           engine.say("YAYYYYY !!!! You Won the treasure !!")
+           engine.runAndWait()
+           
        elif choice3=="green":
            print ("Wrong gate !! Game Over")    
+           engine.say("OOPS Wrong gate !! Game Over")
+           engine.runAndWait()
         #game will continue
     else:
         print (''' _.---._     .---.
@@ -190,6 +210,10 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
                                                       ~  ~--.....--~`''')
         
         print(" Crocs Killed you.  You Lost Game over !!")    
+        engine.say("Crocs Killed you.  You Lost Game over !!")
+        engine.runAndWait()
 
 else:
     print ("Better Luck !! Next Time !! Game Over")
+    engine.say("Better Luck !! Next Time !! Game Over")
+    engine.runAndWait()
