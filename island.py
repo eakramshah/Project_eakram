@@ -26,9 +26,9 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 /______/______/______/______/______/______/______/______/______/______/[TomekK]
 *******************************************************************************''')
 
-choice1=input ('Welconme to treasure Island your mission is to find the tressur \Type left or right !\n').lower()
 engine.say("Welconme to treasure Island your mission is to find the tressur \Type left or right")
 engine.runAndWait()
+choice1=input ('Welconme to treasure Island your mission is to find the tressur \Type left or right !\n').lower()
 if choice1=="left":
     print ('''                  _
              .''.' \    _  __
@@ -47,10 +47,10 @@ if choice1=="left":
                                          _/    'o'
                                       .-'
 ''')
-    choice2= input ("There is a Lake around !! Do you want to swim or wait swim or wait for a Boat\n").lower()
     engine.say("There is a Lake around !! Do you want to swim or wait swim or wait for a Boat")
     engine.runAndWait()
-  
+    choice2= input ("There is a Lake around !! Do you want to swim or wait swim or wait for a Boat\n").lower()
+
     if choice2=="wait":
        print ('''                  _  /)
                  mo / )
@@ -118,9 +118,9 @@ _________||_|_|_|_{| |}|||_|_||______________
   |_|___|___|___| ||>___<||>___<||>___<||>___<||>___<||  ||>___<||>___<||>___<||>___<||>___<|| |_|___|___|___|
   |___|___|___|_| "-----------------------------------"  "-----------------------------------" |___|___|___dv|''')
        
-       choice3= input ("Chose Gate colour to enter !!  red/blue/green").lower()
        engine.say("Chose Gate colour to enter !!  red/blue/green")
        engine.runAndWait()
+       choice3= input ("Chose Gate colour to enter !!  red/blue/green").lower()
        if choice3 =="red":
            print ('''                                    ___---|
                                    /::::::|
@@ -165,9 +165,9 @@ _________||_|_|_|_{| |}|||_|_||______________
                                 |||||| ||||||
                                  ||||   ||||
                                         |''')
-           print ("Wrong gate !! Game over")
            engine.say("Wrong gate !! Game over")
            engine.runAndWait()
+           print ("Wrong gate !! Game over")
        elif choice3=="blue":
            print('''*******************************************************************************
           |                   |                  |                     |
