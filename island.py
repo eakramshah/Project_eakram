@@ -27,6 +27,8 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 *******************************************************************************''')
 
 choice1=input ('Welconme to treasure Island your mission is to find the tressur \Type left or right !\n').lower()
+engine.say("Welconme to treasure Island your mission is to find the tressur \Type left or right")
+engine.runAndWait()
 if choice1=="left":
     print ('''                  _
              .''.' \    _  __
