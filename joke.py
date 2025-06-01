@@ -12,12 +12,18 @@ jokes = [
     "Why did the robot go on vacation? Because it needed to recharge!"
 ]
 
+engine.say("Welcome to the Joke World wanna hear a Joke")
+engine.runAndWait()
 print ("Welcome to the Joke World wanna hear a Joke\n")
 answer = input().strip().lower()
 
 if answer == "yes":
+  engine.say("What is you name")
+  engine.runAndWait()
   name = input ("\nWhat is you name\n")
-  print ("Hi\n" + name + " Here is a joke for you.\n")
+  print ("Hi\n" + name )
+  engine.say(name)
+  engine.runAndWait()
   joke = random.choice(jokes)
   print(joke)
   engine.say(joke)
@@ -30,12 +36,7 @@ if answer == "yes":
      print (joke)
      engine.say(joke)
      engine.runAndWait()
-
-  elif  answer2=="no":
+  else :
     print ("\nOk no problem ! Maybe Next time ")
     engine.say("\n Ok no problem ! Maybe Next time ")
-    engine.runAndWait()
-else:
-    print("\nOkay! Come back for more jokes anytime!")
-    engine.say("Okay! Come back for more jokes anytime!")
     engine.runAndWait()
