@@ -39,4 +39,4 @@ print (passwordlist)
 password=""
 for char in passwordlist:
     password+=char
-print (password)    
+print ("Your password =", password)
