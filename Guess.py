@@ -15,9 +15,9 @@ def check_answer (user_guess,actual_answer):
 def set_difficulty():
     level = input ("Choose Dificulty level ! 'easy' or 'hard' ")
     if level == "easy":
-        turns= EASY_LEVEL_TURN
+        return EASY_LEVEL_TURN
     else:
-        turns = HARD_LEVEL_TURN
+        return HARD_LEVEL_TURN
 
 print ("welcome to the guessing number game \n ")
 
@@ -25,4 +25,6 @@ print ("Let computer guess a number between 1 and 100")
 
 answer = randint(1,100)
 
-guess=  input(int("Make a Guess !! "))
+guess=  int(input("Make a Guess !! "))
+turns = set_difficulty()
+print (f"You have {turns}attempts remaining !! ")
