@@ -1,30 +1,56 @@
-import random 
-from random import randint 
+from random import randint
 
-EASY_LEVEL_TURN=5
-HARD_LEVEL_TURN=10
+EASY_LEVEL_TURN = 5
+HARD_LEVEL_TURN = 10
 
-def check_answer (user_guess,actual_answer):
+
+def check_answer(user_guess, actual_answer):
     if user_guess > actual_answer:
-        print ("Too high !! ")
+        print("Too high!")
+        return False
     elif user_guess < actual_answer:
-        print ("Too low")    
+        print("Too low!")
+        return False
     else:
-        print ( f"you got it !! {actual_answer}")    
+        print(f"You got it!! {actual_answer}")
+        return True
+
 
 def set_difficulty():
-    level = input ("Choose Dificulty level ! 'easy' or 'hard' ")
+    level = input("Choose Difficulty level! 'easy' or 'hard': ").lower()
     if level == "easy":
         return EASY_LEVEL_TURN
     else:
         return HARD_LEVEL_TURN
 
-print ("welcome to the guessing number game \n ")
 
-print ("Let computer guess a number between 1 and 100")
+def game():
+    print("\nWelcome to the guessing number game")
+    print("Let computer guess a number between 1 and 100")
 
-answer = randint(1,100)
+    answer = randint(1, 100)
+    turns = set_difficulty()
 
-guess=  int(input("Make a Guess !! "))
-turns = set_difficulty()
-print (f"You have {turns}attempts remaining !! ")
+    while turns > 0:
+        print(f"\nYou have {turns} attempts remaining!")
+        guess = int(input("Make a Guess!! "))
+
+        correct = check_answer(guess, answer)
+
+        if correct:
+            break
+
+        turns -= 1
+
+        if turns == 0:
+            print(f"You lost! The answer was {answer}")
+
+    # 🔁 RECURSION
+    play_again = input("\nPlay again? (y/n): ").lower()
+    if play_again == "y":
+        game()
+    else:
+        print("Thanks for playing!")
+
+
+game()
