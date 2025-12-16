@@ -1,29 +1,36 @@
 from util import logo, vs, data
 import random
 
-def main():
-
-
+def game():
+    total_score = 0
     print(logo)
 
-    a= random.choice(data)
-    b= random.choice(data)
-    while a==b:
+    while True:
+        a = random.choice(data)
         b = random.choice(data)
-    print (f"A:{a['name']} - A {a['description']} - From {a['country']} - Follower_count ?")
-    print (vs)
-    print (f"B:{b['name']} - A {b['description']} - From {b['country']} - Follower_count ?")
-    guess_high_low = input("Who has more number of followers !! ? Type A: or B:").lower()
-#Logic
-    if a['follower_count'] > b['follower_count'] and guess_high_low == 'a':
-        print(f"Correct! {a['name']} Has more Followers than {b['name']} ")
-    elif b['follower_count'] > a["follower_count"] and guess_high_low =='b':
-        print(f"Correct! {b['name']} Has more Followers than {a['name']} ")
-    else:
-        print("Wrong")    
-    play_again =input ("Doyou want to play again ! Type: Y or N:").lower() 
-    if play_again == "y":
-        main()
-    else:
-        print (" Thankyou !")    
-main()
+        while a == b:
+            b = random.choice(data)
+
+        print(f"A: {a['name']} - {a['description']} - From {a['country']}")
+        print(vs)
+        print(f"B: {b['name']} - {b['description']} - From {b['country']}")
+
+        guess = input("Who has more followers? Type A or B: ").lower()
+
+        if a['follower_count'] > b['follower_count'] and guess == 'a':
+            total_score += 1
+            print(f"Correct! {a['name']} has more followers.")
+        elif b['follower_count'] > a['follower_count'] and guess == 'b':
+            total_score += 1
+            print(f"Correct! {b['name']} has more followers.")
+        else:
+            print(f"Wrong! Final Score: {total_score}")
+            break
+
+        print(f"Current Score: {total_score}")
+        play_again = input("Play again? Type Y or N: ").lower()
+        if play_again != 'y':
+            print(f"Thank you for playing! Final Score: {total_score}")
+            break
+
+game()
