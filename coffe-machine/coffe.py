@@ -41,8 +41,14 @@ def order():
 
         more = input("Do you want to order more? (Y/N): ").lower()
         if more != 'y':
+            
             print("\n🧾 FINAL BILL")
             print(f"Total amount : ${total_bill}")
+            money=int (input("Please enter currency nomination !\n"))
+            if money >total_bill:
+                print(f"here is you change ! {money-total_bill}")
+            else:
+                break    
             print("Thank you! ☕ Have a great day!")
             break
 
