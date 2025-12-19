@@ -46,11 +46,11 @@ def order():
             print(f"Total amount : ${total_bill}")
             money=int (input("Please enter currency nomination !\n"))
             if money >total_bill:
-                print(f"here is you change ! {money-total_bill}")
+                print(f"here is you change ! {money-total_bill}$")
             else:
+                print("Sorry thats not enough !")
                 break    
             print("Thank you! ☕ Have a great day!")
             break
-
 
 coffee_menu()
